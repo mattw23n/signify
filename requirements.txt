@@ -7,3 +7,4 @@ opencv-python==4.10.0.84
 pillow==10.3.0
 mediapipe==0.10.14
 scikit-learn==1.5.0
+django==5.0.6
