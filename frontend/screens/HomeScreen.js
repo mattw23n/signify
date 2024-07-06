@@ -1,3 +1,4 @@
+import { Video } from 'expo-av';
 import React from 'react';
 import { View, Text, TouchableOpacity, StatusBar } from 'react-native'
 
@@ -6,27 +7,96 @@ const HomeScreen = ({ navigation }) => {
     <View className='flex-1 bg-white pt-10'>
       <StatusBar style='auto' />
 
-        <View className='bg-white rounded-lg
-                          pt-12 pb-5 pl-5
-                          w-72
-                          border border-gray-200
-                          mx-auto'>
-          <Text className='text-lg font-bold mb-1.2'>Hello,</Text>
+        <View className='bg-white rounded-2xl
+                          pt-8 pb-5 pl-5
+                          w-90
+                          border border-gray-200 border-2
+                          mx-10'>
+          <Text className='text-lg font-bold'>Hello,</Text>
           <Text className='text-lg font-black'>Lizzy Jamie</Text>
         </View>
 
-      <Text className='text-lg font-black text-left pl-10 pt-9'>
+      <Text className='text-xl font-black text-left ml-10 pt-9'>
         My videos
       </Text>
+
+      <View className="flex flex-row mx-10">
+        <View className="mr-8">
+          <Video
+              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/0bf2acbc-c88f-4153-a8f8-d9a9786a2021.mp4" }}
+              rate={1.0}
+              volume={1.0}
+              isMuted={false}
+              resizeMode='cover'
+              shouldPlay={false}
+              isLooping
+              style={{ width: 150, height: 100}}
+              className = "rounded-xl mt-5 mb-1"
+              />
+          <Text className="font-bold text-base">Testing: Today 🌥</Text>
+          <Text className="text-xs">6 July 2024</Text>
+        </View>
+
+        <View className="">
+          <Video
+              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/437bd7bd-fc3a-4346-8222-b00c2bc6fca2.mp4" }}
+              rate={1.0}
+              volume={1.0}
+              isMuted={false}
+              resizeMode='cover'
+              shouldPlay={false}
+              isLooping
+              style={{ width: 150, height: 100}}
+              className = "rounded-xl mt-5 mb-1"
+              />
+          <Text className="font-bold text-base">Testing: Hello 👋</Text>
+          <Text className="text-xs">6 July 2024</Text>
+        </View>
+      </View>
+
+      <View className="flex flex-row mx-10">
+        <View className="mr-8">
+          <Video
+              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/0bf2acbc-c88f-4153-a8f8-d9a9786a2021.mp4" }}
+              rate={1.0}
+              volume={1.0}
+              isMuted={false}
+              resizeMode='cover'
+              shouldPlay={false}
+              isLooping
+              style={{ width: 150, height: 100}}
+              className = "rounded-xl mt-5 mb-1"
+              />
+          <Text className="font-bold text-base">Testing: Today 🌥</Text>
+          <Text className="text-xs">6 July 2024</Text>
+        </View>
+
+        <View className="">
+          <Video
+              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/437bd7bd-fc3a-4346-8222-b00c2bc6fca2.mp4" }}
+              rate={1.0}
+              volume={1.0}
+              isMuted={false}
+              resizeMode='cover'
+              shouldPlay={false}
+              isLooping
+              style={{ width: 150, height: 100}}
+              className = "rounded-xl mt-5 mb-1"
+              />
+          <Text className="font-bold text-base">Testing: Hello 👋</Text>
+          <Text className="text-xs">6 July 2024</Text>
+        </View>
+      </View>
+      
       
       <View className='bg-white rounded-lg
-                          pt-36 h-max
+                          h-max
                           items-center'>
-          <Text className='text-lg font-bold mb-1.2 text-gray-300'>
+          {/* <Text className='text-lg font-bold mb-1.2 text-gray-300'>
             You haven't uploaded anything
-          </Text>
+          </Text> */}
 
-          <View className='pt-36'>
+          <View className='pt-10'>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Upload')}
                 style={{

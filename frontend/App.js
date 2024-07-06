@@ -3,6 +3,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView, Image } from "react-native";
 import NaviBar from "./components/NaviBar";
 import GeneratedScreen from "./screens/GeneratedScreen";
+import Header from "./components/HowItWorks";
+import { View } from "react-native";
+import LinearGradient from 'react-native-linear-gradient';
+import { tw } from 'nativewind';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,17 +15,33 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            headerTitle: "",
+            headerTitleAlign: 'center',
+            headerTitle: () => (
+              <View style={{ width: 120, height: 40, justifyContent: 'center', alignItems: 'center' }}>
+                <Image 
+                  source={require('./assets/icon.png')} 
+                  style={{ width: '100%', height: '100%' }} 
+                  resizeMode="contain" 
+                />
+              </View>
+            ),
+            headerRight: () => (
+              <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
+                <Header />
+              </View>
+            ),
             headerStyle: {
               height: 50,
             },
             headerBackground: () => (
-              <SafeAreaView className='flex-1'>
-                <Image
-                source={require("./assets/topBar.png")}
-                style={{ height: "100%", width: "100%"}}
-               />
-              </SafeAreaView>
+              <View>
+                <Image 
+                  source={require('./assets/top.png')} 
+                  style={{ width: '100%', height: '100%' }} 
+                  resizeMode="cover" 
+                />
+              </View>
+              
             ),
           }}>
         <Stack.Screen

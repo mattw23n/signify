@@ -4,9 +4,7 @@ import { Video } from 'expo-av';
 import * as Clipboard from 'expo-clipboard';
 
 const GeneratedScreen = ({ route }) => {
-    // const { videoUri } = route.params || {};
-
-    const videoUri = "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/14e980ca-6e83-4d03-a993-aeed54c0d9bc.mp4"
+    const { videoUri } = route.params || {};
 
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(true);
@@ -30,7 +28,11 @@ const GeneratedScreen = ({ route }) => {
 
     let genText =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
+    genText = "Hello all, thank you!"
     let [text, setText] = useState(genText);
+
+    
+
 
     /*
     TODO
@@ -55,28 +57,48 @@ const GeneratedScreen = ({ route }) => {
     }
 
     return (
-    <View className='flex-1 bg-white pt-6 pb-36'>
-        <View style={{ flexDirection: 'row', alignItems: 'center'}}>
-            <Text className='pl-9 pb-4
-                            text-lg font-black mb-1.2'>
-                            Generated Text
-                            </Text>
-            <TouchableOpacity className='pl-24 pb-4' onPress={copyToClipboard}>
-                {copied?
-                (<Text style={{ fontSize: 16, color: '#32E08C' }}>
-                    Copied!
+    <View className='flex-1 bg-white'>
+        <View className='items-center'>
+            <Video
+            ref={videoRef}
+            source={{ uri: videoUri }}
+            rate={1.0}
+            volume={1.0}
+            isMuted={false}
+            resizeMode='contain'
+            shouldPlay={isPlaying}
+            isLooping
+            style={{ width: 330, height: 200}}
+            className = "rounded-xl mx-10 my-5"
+            on
+            />
+            <TouchableOpacity
+                className = "py-2 px-10 rounded-xl mb-20"
+                style={{
+                    backgroundColor: '#32E08C',
+                  }}
+                onPress={handlePlayPause}>
+                {isPlaying ?
+                (<Text className='font-black text-base text-white'>
+                    Pause
                 </Text>) :
-                (<Text style={{ fontSize: 16, color: '#A5A5A5' }}>
-                    Copy
-                </Text>
-                )}
-            </TouchableOpacity>
+                (<Text className='font-black text-base text-white'>
+                    Play
+                </Text>)}
+             </TouchableOpacity>
+        </View>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center'}}>
+            <Text className='pl-10 pb-4 -pt-20
+                            text-xl font-black mb-1.2'>
+                            Generated Captions
+                            </Text>
         </View>
 
         <StatusBar style='auto'/>
-            <View className='rounded-lg bg-gray-100
-                            w-72 pb-2
-                            mx-auto'>
+            <View className='rounded-xl bg-gray-200
+                            w-90 pb-2
+                            mx-10'>
                 <ScrollView vertical={true}
                             maxHeight={200}>
                     <View className='pl-4'>
@@ -92,36 +114,23 @@ const GeneratedScreen = ({ route }) => {
                 </ScrollView>
             </View>
 
-        <View className='pt-4 pb-4 items-center'>
-            <Video
-            ref={videoRef}
-            source={{ uri: videoUri }}
-            rate={1.0}
-            volume={1.0}
-            isMuted={false}
-            resizeMode='contain'
-            shouldPlay={isPlaying}
-            isLooping
-            style={{ width: '75%', height: '75%'}}
-        />
             <TouchableOpacity
+                className = "mx-20 my-10 justify-center border border-gray-500 p-4 rounded-xl"
                 style={{
-                    backgroundColor: '#32E08C',
-                    paddingVertical: 8,
-                    paddingHorizontal: 28,
-                    borderRadius: 24,
-                    marginTop: 12
+                    // backgroundColor: '#32E08C',
                   }}
-                onPress={handlePlayPause}>
-                {isPlaying ?
-                (<Text className='font-black text-base text-white'>
-                    Pause
+                onPress={copyToClipboard}>
+                {copied?
+                (<Text style={{ fontSize: 16, color: '#32E08C' }} className="text-center font-bold">
+                    Copied!
                 </Text>) :
-                (<Text className='font-black text-base text-white'>
-                    Play
-                </Text>)}
+                (<Text style={{ fontSize: 16}} className="text-center font-bold">
+                    Copy
+                </Text>
+                )}
              </TouchableOpacity>
-        </View>
+
+        
     </View>
   );
 };

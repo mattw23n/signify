@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w5h7bkqkuuh06^i)gktl0hbq2lpx0%q3yb#9*(ft#fehtq0t5p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.1.104']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.1.109']
 
 
 # Application definition
@@ -129,8 +129,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Your frontend URL
-    "http://192.168.1.104:19000",  # Your local IP with port used by Expo
-    "http://192.168.1.104:8000",  # Your local IP with Django port
+    "http://192.168.1.109:19000",  # Your local IP with port used by Expo
+    "http://192.168.1.109:8000",  # Your local IP with Django port
 ]
 
 MEDIA_URL = '/media/'

@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
 import axios from 'axios';
+import LoadingScreen from './LoadingScreen';
 
 const UploadScreen = ({ navigation }) => {
+    const [loading, setLoading] = useState(false);
+
     const [video, setVideo] = useState(null);
   
     const handleChooseVideo = async () => {
@@ -18,7 +21,9 @@ const UploadScreen = ({ navigation }) => {
       if (!result.canceled) {
         const { uri } = result.assets[0];
         setVideo(uri);
+        setLoading(true)
         await uploadVideo(uri);
+        setLoading(false)
         navigation.navigate('Generated', { videoUri: uri });
       }
     };
@@ -32,18 +37,22 @@ const UploadScreen = ({ navigation }) => {
       });
   
       try {
-        const response = await axios.post('http://192.168.1.104:8000/api/upload/', formData, {
+        const response = await axios.post('http://192.168.1.109:8000/api/upload/', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
+        
         Alert.alert('Upload Success', JSON.stringify(response.data));
       } catch (error) {
         Alert.alert('Upload Failed', error.message);
       }
     };
 
-    
+
+    if (loading) {
+      return <LoadingScreen />;
+    }
 
   return (
     <View className='flex-1 items-center bg-white justify-center'>
