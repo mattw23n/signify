@@ -7,6 +7,8 @@ import mediapipe as mp
 import json
 import time
 
+project_dir = os.path.dirname(os.path.dirname(__file__))
+
 # Initialize MediaPipe Hands
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
@@ -54,8 +56,8 @@ class WASLModel(nn.Module):
         return x
 
 # Load the trained models
-alphabet_model_path = 'models/asl_model.pth'
-wasl_model_path = 'models/refined_sign_language_model.pth'
+alphabet_model_path = os.path.join(project_dir, 'models', 'asl_model.pth')
+wasl_model_path = os.path.join(project_dir, 'models', 'refined_sign_language_model.pth')
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 alphabet_model = AlphabetModel().to(device)
@@ -67,7 +69,7 @@ wasl_model.load_state_dict(torch.load(wasl_model_path, map_location=device))
 wasl_model.eval()
 
 # Set the video path
-video_path = 'media/upload2.mp4'
+video_path = os.path.join(project_dir, 'video', 'data_1.mp4')
 cap = cv2.VideoCapture(video_path)
 
 # Check if video opened successfully
@@ -83,7 +85,7 @@ previous_landmarks = None
 # Parameters for stability check
 current_sign = None
 current_sign_start_time = None
-min_duration_word = 0.275  # Minimum duration (in seconds) to confirm a word
+min_duration_word = 0.2  # Minimum duration (in seconds) to confirm a word
 min_duration_letter = 0.8  # Minimum duration (in seconds) to confirm a letter
 
 # Store the results

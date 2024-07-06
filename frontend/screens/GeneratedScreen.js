@@ -4,7 +4,10 @@ import { Video } from 'expo-av';
 import * as Clipboard from 'expo-clipboard';
 
 const GeneratedScreen = ({ route }) => {
-    const { videoUri } = route.params || {};
+    // const { videoUri } = route.params || {};
+
+    const videoUri = "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/14e980ca-6e83-4d03-a993-aeed54c0d9bc.mp4"
+
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(true);
 
