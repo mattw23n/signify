@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
               style={{ width: 150, height: 100}}
               className = "rounded-xl mt-5 mb-1"
               />
-          <Text className="font-bold text-base">Testing: Today 🌥</Text>
+          <Text className="font-bold text-base">Today 🌥</Text>
           <Text className="text-xs">6 July 2024</Text>
         </View>
 
@@ -49,7 +49,7 @@ const HomeScreen = ({ navigation }) => {
               style={{ width: 150, height: 100}}
               className = "rounded-xl mt-5 mb-1"
               />
-          <Text className="font-bold text-base">Testing: Hello 👋</Text>
+          <Text className="font-bold text-base">Hello 👋</Text>
           <Text className="text-xs">6 July 2024</Text>
         </View>
       </View>
@@ -57,7 +57,7 @@ const HomeScreen = ({ navigation }) => {
       <View className="flex flex-row mx-10">
         <View className="mr-8">
           <Video
-              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/0bf2acbc-c88f-4153-a8f8-d9a9786a2021.mp4" }}
+              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/9a305df1-6d48-44c7-8fd3-b03fe8082716.mp4" }}
               rate={1.0}
               volume={1.0}
               isMuted={false}
@@ -67,13 +67,13 @@ const HomeScreen = ({ navigation }) => {
               style={{ width: 150, height: 100}}
               className = "rounded-xl mt-5 mb-1"
               />
-          <Text className="font-bold text-base">Testing: Today 🌥</Text>
-          <Text className="text-xs">6 July 2024</Text>
+          <Text className="font-bold text-base">Thank you 🙏</Text>
+          <Text className="text-xs">7 July 2024</Text>
         </View>
 
         <View className="">
           <Video
-              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/437bd7bd-fc3a-4346-8222-b00c2bc6fca2.mp4" }}
+              source={{ uri: "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252Fsignify-f25c00f9-3b6f-4238-a980-cd671ffcf67b/ImagePicker/4e0d26fd-bf39-469e-aa46-50c4ffd90e1a.mp4" }}
               rate={1.0}
               volume={1.0}
               isMuted={false}
@@ -83,8 +83,8 @@ const HomeScreen = ({ navigation }) => {
               style={{ width: 150, height: 100}}
               className = "rounded-xl mt-5 mb-1"
               />
-          <Text className="font-bold text-base">Testing: Hello 👋</Text>
-          <Text className="text-xs">6 July 2024</Text>
+          <Text className="font-bold text-base">Hello All 😁</Text>
+          <Text className="text-xs">7 July 2024</Text>
         </View>
       </View>
       

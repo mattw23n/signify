@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { View, Text, StatusBar, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import { Video } from 'expo-av';
 import * as Clipboard from 'expo-clipboard';
+import axios from 'axios';
 
 const GeneratedScreen = ({ route }) => {
     const { videoUri } = route.params || {};
@@ -20,24 +21,27 @@ const GeneratedScreen = ({ route }) => {
     };
 
     const [copied, setCopied] = React.useState('');
-    const [height, setHeight] = useState(40);
+    const [height, setHeight] = useState(80);
 
     const handleContentSizeChange = (event) => {
-        setHeight(event.nativeEvent.contentSize.height);
+        setHeight(event.nativeEvent.contentSize.height + 20);
     };
 
-    let genText =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
-    genText = "Hello all, thank you!"
-    let [text, setText] = useState(genText);
+    // let genText =
+    // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
+    // genText = "Hello all, thank you!"
+    const [text, setText] = useState(null);
 
-    
-
-
-    /*
-    TODO
-    add text fetching from API here
-    */
+    useEffect(() => {
+        axios.get('http://192.168.1.109:8000/api/caption/')
+          .then(response => {
+            console.log('Response data:', response.data);
+            setText(response.data.results);
+          })
+          .catch(error => {
+            console.error('Error fetching results:', error);
+          });
+      }, []);
 
     const copyToClipboard = async () => {
         await Clipboard.setStringAsync(text);
@@ -106,7 +110,7 @@ const GeneratedScreen = ({ route }) => {
                             value={text}
                             onChangeText={(newText) => setText(newText)}
                             style={{ width: 260, textAlignVertical: 'top',
-                                    paddingVertical: 8, fontSize: 15, height}}
+                                    paddingVertical: 8, fontSize: 15, height: height}}
                             multiline={true}
                             onContentSizeChange={handleContentSizeChange}
                         />
