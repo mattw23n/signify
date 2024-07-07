@@ -34,9 +34,10 @@ def generate_caption():
 
         results = construct_sentence(word_list)
         logger.info(f"Constructed sentence: {results}")
+        
+        text_to_speech(results)
         return results
 
-        text_to_speech(results)
 
         
 
