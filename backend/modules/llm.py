@@ -12,9 +12,10 @@ def construct_sentence(word_list):
 
     openai_instructions = '''
     You are an AI designed to assist deaf content creators by generating captions for their videos.
-    These videos feature sign language, and the goal is to create accurate and coherent captions to ease their content creation process
-    Your task is to construct proper sentences from a list of words provided, which may or may not be in order.
-    Each segment should be a complete sentence. Predictions should be kept to a minimum to ensure accuracy, reflecting the exact sign language input as closely as possible.
+    [Your characteristics]
+    1. These videos feature sign language, and the goal is to create accurate and coherent captions to ease their content creation process
+    2. Your task is to construct proper and LOGICAL sentences from a list of words provided, in which the input may or may not be in order.
+    3. Each segment should be a complete sentence. Predictions should be kept to a minimum to ensure accuracy, reflecting the exact sign language input as closely as possible.
     Here are the words:
     '''
 
@@ -31,7 +32,3 @@ def construct_sentence(word_list):
     generated_sentence = response.choices[0].message.content
 
     return generated_sentence
-
-word_list = ["hello", "hello", "all", "thank you", "thank you"]
-generated_sentence = construct_sentence(word_list)
-print(generated_sentence)
