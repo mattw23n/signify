@@ -1,0 +1,634 @@
+[
+    {
+        "sign": "using",
+        "confidence": 0.7159364819526672
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5235300064086914
+    },
+    {
+        "sign": "using",
+        "confidence": 0.48583129048347473
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5638958215713501
+    },
+    {
+        "sign": "using",
+        "confidence": 0.47775131464004517
+    },
+    {
+        "sign": "create",
+        "confidence": 0.2806059718132019
+    },
+    {
+        "sign": "sign-language",
+        "confidence": 0.21765314042568207
+    },
+    {
+        "sign": "create",
+        "confidence": 0.29086148738861084
+    },
+    {
+        "sign": "create",
+        "confidence": 0.2291051745414734
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.24173232913017273
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.2826794683933258
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.2924964725971222
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.3331845998764038
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.3512347936630249
+    },
+    {
+        "sign": "i-am",
+        "confidence": 0.45369866490364075
+    },
+    {
+        "sign": "i-am",
+        "confidence": 0.43829676508903503
+    },
+    {
+        "sign": "using",
+        "confidence": 0.49515125155448914
+    },
+    {
+        "sign": "i-am",
+        "confidence": 0.4599177837371826
+    },
+    {
+        "sign": "using",
+        "confidence": 0.8024432063102722
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7850300073623657
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7578721046447754
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7863774299621582
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5076282620429993
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5308703184127808
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6607341170310974
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7355356812477112
+    },
+    {
+        "sign": "i-am",
+        "confidence": 0.4918513298034668
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.45112916827201843
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.47335419058799744
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.36450886726379395
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.3055817782878876
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.30474773049354553
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.31521910429000854
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.3033628463745117
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.3344392776489258
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5562279224395752
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6308568120002747
+    },
+    {
+        "sign": "i-am",
+        "confidence": 0.46539080142974854
+    },
+    {
+        "sign": "i-am",
+        "confidence": 0.5109285116195679
+    },
+    {
+        "sign": "i-am",
+        "confidence": 0.48511070013046265
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.41424983739852905
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.3220961391925812
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.2963138818740845
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.29457521438598633
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.4541277587413788
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.7401123642921448
+    },
+    {
+        "sign": "using",
+        "confidence": 0.4860934615135193
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.727349579334259
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.7205473780632019
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.37833696603775024
+    },
+    {
+        "sign": "using",
+        "confidence": 0.570024847984314
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5376191139221191
+    },
+    {
+        "sign": "using",
+        "confidence": 0.46503597497940063
+    },
+    {
+        "sign": "today",
+        "confidence": 0.2566418945789337
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5798810124397278
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5968087315559387
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5522090792655945
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5768830180168152
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5930413007736206
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5726186037063599
+    },
+    {
+        "sign": "using",
+        "confidence": 0.4706938564777374
+    },
+    {
+        "sign": "create",
+        "confidence": 0.31664228439331055
+    },
+    {
+        "sign": "create",
+        "confidence": 0.22523024678230286
+    },
+    {
+        "sign": "today",
+        "confidence": 0.22344595193862915
+    },
+    {
+        "sign": "today",
+        "confidence": 0.2053631693124771
+    },
+    {
+        "sign": "create",
+        "confidence": 0.36161115765571594
+    },
+    {
+        "sign": "create",
+        "confidence": 0.3628484010696411
+    },
+    {
+        "sign": "create",
+        "confidence": 0.3172171413898468
+    },
+    {
+        "sign": "create",
+        "confidence": 0.3257247805595398
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.28335705399513245
+    },
+    {
+        "sign": "create",
+        "confidence": 0.3259192109107971
+    },
+    {
+        "sign": "create",
+        "confidence": 0.34542250633239746
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6554187536239624
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7154783606529236
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5700855851173401
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5871707201004028
+    },
+    {
+        "sign": "using",
+        "confidence": 0.558104395866394
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6254135966300964
+    },
+    {
+        "sign": "using",
+        "confidence": 0.4634190499782562
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5781674981117249
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5271962881088257
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5267802476882935
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5488077998161316
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7707055807113647
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.4727880358695984
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.38642117381095886
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.3674668073654175
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.48153552412986755
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.491780161857605
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.4654652774333954
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.42655685544013977
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.38775473833084106
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.5365890860557556
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.515811026096344
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.503574013710022
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.46836283802986145
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.35991352796554565
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.4297798275947571
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.5300607681274414
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6050949692726135
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.5926790833473206
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.36578235030174255
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.3830440938472748
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.6001716256141663
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6635754704475403
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5838647484779358
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6410536766052246
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6358421444892883
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6240238547325134
+    },
+    {
+        "sign": "using",
+        "confidence": 0.499428391456604
+    },
+    {
+        "sign": "using",
+        "confidence": 0.620330810546875
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7226269841194153
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6901772618293762
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7191577553749084
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6411432027816772
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5971325635910034
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7722828984260559
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7900540232658386
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7760757803916931
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7871577739715576
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7935998439788818
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7780579924583435
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7720192074775696
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7730323672294617
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7908284068107605
+    },
+    {
+        "sign": "using",
+        "confidence": 0.789411187171936
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7955813407897949
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7905534505844116
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5584597587585449
+    },
+    {
+        "sign": "using",
+        "confidence": 0.625848650932312
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6420189738273621
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5607991218566895
+    },
+    {
+        "sign": "learn",
+        "confidence": 0.4452308118343353
+    },
+    {
+        "sign": "create",
+        "confidence": 0.35232558846473694
+    },
+    {
+        "sign": "today",
+        "confidence": 0.28280964493751526
+    },
+    {
+        "sign": "how-to",
+        "confidence": 0.21056242287158966
+    },
+    {
+        "sign": "create",
+        "confidence": 0.24960589408874512
+    },
+    {
+        "sign": "create",
+        "confidence": 0.28450003266334534
+    },
+    {
+        "sign": "today",
+        "confidence": 0.23580621182918549
+    },
+    {
+        "sign": "today",
+        "confidence": 0.22675912082195282
+    },
+    {
+        "sign": "create",
+        "confidence": 0.27340877056121826
+    },
+    {
+        "sign": "create",
+        "confidence": 0.26408976316452026
+    },
+    {
+        "sign": "create",
+        "confidence": 0.2160346955060959
+    },
+    {
+        "sign": "create",
+        "confidence": 0.23664584755897522
+    },
+    {
+        "sign": "create",
+        "confidence": 0.2685745656490326
+    },
+    {
+        "sign": "create",
+        "confidence": 0.270469605922699
+    },
+    {
+        "sign": "create",
+        "confidence": 0.32339656352996826
+    },
+    {
+        "sign": "create",
+        "confidence": 0.25195592641830444
+    },
+    {
+        "sign": "create",
+        "confidence": 0.21048101782798767
+    },
+    {
+        "sign": "create",
+        "confidence": 0.34392207860946655
+    },
+    {
+        "sign": "create",
+        "confidence": 0.3595729470252991
+    },
+    {
+        "sign": "create",
+        "confidence": 0.3371718227863312
+    },
+    {
+        "sign": "going-to",
+        "confidence": 0.26433032751083374
+    },
+    {
+        "sign": "using",
+        "confidence": 0.7147284746170044
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5946540832519531
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5554519295692444
+    },
+    {
+        "sign": "using",
+        "confidence": 0.5337007641792297
+    },
+    {
+        "sign": "using",
+        "confidence": 0.6576384902000427
+    }
+]

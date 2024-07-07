@@ -1,0 +1,37 @@
+{
+  "name": "signify",
+  "version": "1.0.0",
+  "main": "expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo-google-fonts/open-sans": "^0.2.3",
+    "@expo/metro-runtime": "~3.2.1",
+    "@react-navigation/bottom-tabs": "^6.5.20",
+    "@react-navigation/native-stack": "^6.9.26",
+    "axios": "^1.7.2",
+    "expo": "^51.0.18",
+    "expo-av": "~14.0.5",
+    "expo-clipboard": "~6.0.3",
+    "expo-image-picker": "~15.0.5",
+    "expo-status-bar": "~1.12.1",
+    "fs": "^0.0.1-security",
+    "nativewind": "^2.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.2",
+    "react-native-image-picker": "^7.1.2",
+    "react-native-modal": "^13.0.1",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-web": "~0.19.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "tailwindcss": "^3.3.2"
+  },
+  "private": true
+}
