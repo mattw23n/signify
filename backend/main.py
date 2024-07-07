@@ -1,5 +1,6 @@
 from modules.sign_to_text import process_video
 from modules.llm import construct_sentence
+from modules.tts import text_to_speech
 from scripts.json_to_list import json_conversion
 import os
 import logging
@@ -34,6 +35,10 @@ def generate_caption():
         results = construct_sentence(word_list)
         logger.info(f"Constructed sentence: {results}")
         return results
+
+        text_to_speech(results)
+
+        
 
     except FileNotFoundError as fnf_error:
         logger.error(f"File not found: {fnf_error}")
