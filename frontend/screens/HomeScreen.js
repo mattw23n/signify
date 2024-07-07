@@ -92,10 +92,6 @@ const HomeScreen = ({ navigation }) => {
       <View className='bg-white rounded-lg
                           h-max
                           items-center'>
-          {/* <Text className='text-lg font-bold mb-1.2 text-gray-300'>
-            You haven't uploaded anything
-          </Text> */}
-
           <View className='pt-10'>
             <TouchableOpacity
                 onPress={() => navigation.navigate('Upload')}
@@ -112,7 +108,6 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
-
     </View>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
 import axios from 'axios';
@@ -6,7 +6,6 @@ import LoadingScreen from './LoadingScreen';
 
 const UploadScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(false);
-
     const [video, setVideo] = useState(null);
   
     const handleChooseVideo = async () => {
@@ -49,7 +48,6 @@ const UploadScreen = ({ navigation }) => {
       }
     };
 
-
     if (loading) {
       return <LoadingScreen />;
     }
@@ -64,10 +62,10 @@ const UploadScreen = ({ navigation }) => {
                 paddingHorizontal: 40,
                 borderRadius: 24,
             }}
-            >
-            <Text className='text-base text-white font-black'>
-                Upload from Gallery
-            </Text>
+        >
+          <Text className='text-base text-white font-black'>
+              Upload from Gallery
+          </Text>
         </TouchableOpacity>
     </View>
   );

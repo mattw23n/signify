@@ -12,12 +12,10 @@ logger = logging.getLogger(__name__)
 
 project_dir = os.path.dirname(os.path.dirname(__file__))
 
-# Initialize MediaPipe Holistic
 mp_holistic = mp.solutions.holistic
 mp_drawing = mp.solutions.drawing_utils
 holistic = mp_holistic.Holistic(static_image_mode=False, min_detection_confidence=0.5)
 
-# Create a label mapping for WASL
 wasl_label_mapping = {
     'hello': 0,
     'going-to': 1,
@@ -32,7 +30,6 @@ wasl_label_mapping = {
 }
 reverse_wasl_label_mapping = {v: k for k, v in wasl_label_mapping.items()}
 
-# Define the WASL Model
 class WASLModel(nn.Module):
     def __init__(self):
         super(WASLModel, self).__init__()
@@ -43,37 +40,31 @@ class WASLModel(nn.Module):
 
     def forward(self, x):
         x = torch.relu(self.conv1(x.permute(0, 2, 1)))
-        x = x.permute(0, 2, 1)  # permute back for LSTM
+        x = x.permute(0, 2, 1)  
         lstm_out, _ = self.lstm(x)
-        x = lstm_out[:, -1, :]  # Take the last output of the LSTM
+        x = lstm_out[:, -1, :]  
         x = torch.relu(self.fc1(x))
         x = self.fc2(x)
         return x
 
-# Load the trained model
 model_save_path = os.path.join(project_dir, 'models', 'WASL_sign_language_model.pth')
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = WASLModel().to(device)
 model.load_state_dict(torch.load(model_save_path, map_location=device))
 model.eval()
 
-# Set the video path
 video_path = os.path.join(project_dir, 'video', 'data_2.mp4')
 cap = cv2.VideoCapture(video_path)
 
-# Check if video opened successfully
 if not cap.isOpened():
     logger.error("Error: Could not open video.")
 else:
     logger.info("Video opened successfully.")
 
-# Store the results
 results_list = []
 
-# Initialize time for logging
 start_time = time.time()
 
-# Function to process the video feed and make predictions
 def process_video():
     global start_time
     while cap.isOpened():
@@ -104,7 +95,6 @@ def process_video():
         if len(landmarks) == 225:
             landmarks = np.array(landmarks).reshape(1, -1, 225)
 
-            # Prepare landmarks for the model
             landmarks_tensor = torch.tensor(landmarks, dtype=torch.float32).to(device)
 
             with torch.no_grad():
@@ -113,16 +103,13 @@ def process_video():
                 sign = reverse_wasl_label_mapping[predicted.item()]
                 confidence = torch.nn.functional.softmax(outputs, dim=1)[0][predicted.item()].item()
 
-                # Display the sign and confidence on the frame
                 cv2.putText(frame, f'{sign} ({confidence:.2f})', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
 
-                # Log the detected sign every 0.5 seconds
                 current_time = time.time()
                 if current_time - start_time >= 0.5:
                     results_list.append({'sign': sign, 'confidence': confidence})
                     start_time = current_time
 
-        # Draw holistic skeleton
         if results.pose_landmarks:
             mp_drawing.draw_landmarks(frame, results.pose_landmarks, mp_holistic.POSE_CONNECTIONS)
         if results.left_hand_landmarks:
@@ -130,7 +117,6 @@ def process_video():
         if results.right_hand_landmarks:
             mp_drawing.draw_landmarks(frame, results.right_hand_landmarks, mp_holistic.HAND_CONNECTIONS)
 
-        # Display the frame
         cv2.imshow('WASL Translation', frame)
 
         if cv2.waitKey(1) & 0xFF == 27:
@@ -139,7 +125,6 @@ def process_video():
     cap.release()
     cv2.destroyAllWindows()
 
-    # Save results to JSON
     results_file_path = os.path.join(project_dir, 'video', 'results.json')
     if results_list:
         with open(results_file_path, 'w') as f:

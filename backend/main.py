@@ -23,7 +23,8 @@ def generate_caption():
 
         results_file_path = os.path.join(project_dir, 'backend', 'video', 'results.json')
         logger.info(f"Results file path: {results_file_path}")
-        
+
+        #Uncomment the code below to process the video
 
         # logger.info("Starting video processing...")
         # process_video()

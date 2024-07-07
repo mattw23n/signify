@@ -17,7 +17,7 @@ def log_path_audio(request):
 urlpatterns = [
     path('upload/', VideoUploadView.as_view(), name='video-upload'),
     path('caption/', log_path_caption, name='get_caption'), 
-    path('audio/', log_path_audio, name='get_adio') # Add logging to the URL pattern
+    path('audio/', log_path_audio, name='get_adio')
 ]
 
 

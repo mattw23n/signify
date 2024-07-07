@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'INSERT_YOUR_IP_ADDRESS_HERE']
 
-
 # Application definition
 
 INSTALLED_APPS = [
