@@ -1,5 +1,5 @@
 # Signify
-## Team Tik Tak Tok
+Team Tik Tak Tok
 Matteo, Gilchris, Tania, Justin, Samuel
 
 ## What Signify Does
