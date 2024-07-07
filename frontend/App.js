@@ -5,8 +5,6 @@ import NaviBar from "./components/NaviBar";
 import GeneratedScreen from "./screens/GeneratedScreen";
 import Header from "./components/HowItWorks";
 import { View } from "react-native";
-import LinearGradient from 'react-native-linear-gradient';
-import { tw } from 'nativewind';
 
 const Stack = createNativeStackNavigator();
 

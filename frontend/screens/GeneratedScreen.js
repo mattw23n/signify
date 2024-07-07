@@ -1,14 +1,62 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { View, Text, StatusBar, ScrollView, TouchableOpacity, TextInput } from 'react-native';
-import { Video } from 'expo-av';
+import { View, Text, StatusBar, ScrollView, TouchableOpacity, TextInput, Image } from 'react-native';
+import { Video, Audio } from 'expo-av';
 import * as Clipboard from 'expo-clipboard';
 import axios from 'axios';
 
+
 const GeneratedScreen = ({ route }) => {
     const { videoUri } = route.params || {};
-
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(true);
+
+    const [isAudioPlaying, setAudioPlaying] = useState(false);
+    const [sound, setSound] = useState(null);
+
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        // Cleanup on component unmount
+        return () => {
+        if (sound) {
+            sound.unloadAsync();
+        }
+        };
+    }, [sound]);
+
+    const loadAndPlayAudio = async () => {
+        try {
+        const { sound: newSound } = await Audio.Sound.createAsync(
+            { uri: 'INSERT_YOUR_IP_ADDRESS_HERE:8000/api/audio/' },
+            { shouldPlay: true }
+        );
+        setSound(newSound);
+        setAudioPlaying(true);
+        setIsLoaded(true);
+
+        newSound.setOnPlaybackStatusUpdate((status) => {
+            if (status.didJustFinish) {
+            setAudioPlaying(false);
+            }
+        });
+        } catch (error) {
+        console.error('Error fetching or playing audio file:', error);
+        }
+    };
+
+    const playPauseAudio = async () => {
+        if (!isLoaded) {
+        await loadAndPlayAudio();
+        } else {
+        if (isAudioPlaying) {
+            await sound.pauseAsync();
+            setAudioPlaying(false);
+        } else {
+            await sound.playAsync();
+            setAudioPlaying(true);
+        }
+        }
+    };
 
     const handlePlayPause = async () => {
         if (isPlaying) {
@@ -27,13 +75,10 @@ const GeneratedScreen = ({ route }) => {
         setHeight(event.nativeEvent.contentSize.height + 20);
     };
 
-    // let genText =
-    // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum';
-    // genText = "Hello all, thank you!"
     const [text, setText] = useState(null);
 
     useEffect(() => {
-        axios.get('http://192.168.1.109:8000/api/caption/')
+        axios.get('INSERT_YOUR_IP_ADDRESS_HERE/api/caption/')
           .then(response => {
             console.log('Response data:', response.data);
             setText(response.data.results);
@@ -67,7 +112,7 @@ const GeneratedScreen = ({ route }) => {
             ref={videoRef}
             source={{ uri: videoUri }}
             rate={1.0}
-            volume={1.0}
+            volume={0.0}
             isMuted={false}
             resizeMode='contain'
             shouldPlay={isPlaying}
@@ -77,7 +122,7 @@ const GeneratedScreen = ({ route }) => {
             on
             />
             <TouchableOpacity
-                className = "py-2 px-10 rounded-xl mb-20"
+                className = "py-2 px-10 rounded-xl mb-8"
                 style={{
                     backgroundColor: '#32E08C',
                   }}
@@ -91,6 +136,42 @@ const GeneratedScreen = ({ route }) => {
                 </Text>)}
              </TouchableOpacity>
         </View>
+
+        <View className="flex flex-row items-center justify-between mr-10 mb-5">
+                <Text className='pl-10 pb-4
+                                    text-xl font-black'>
+                                    Text to Speech
+                </Text>
+                <TouchableOpacity
+                    className = "py-2 px-2 rounded-xl mb-3"
+                    style={{
+                        backgroundColor: '#32E08C',
+                    }}
+                    onPress={playPauseAudio}>
+                    <Image
+                    className="w-8 h-8"
+                    source={
+                        isAudioPlaying
+                        ? require('../assets/pause2.png')
+                        : require('../assets/play2.png')
+                    }
+                    />
+            </TouchableOpacity>
+        </View>
+        {/* <View className="items-center">
+            {isAudioPlaying && (
+                <Image 
+                source={require('../assets/audio.gif')} 
+                className="w-10 h-10" 
+                resizeMode="contain" 
+                />
+
+            )}
+                
+            
+
+        </View> */}
+        
 
         <View style={{ flexDirection: 'row', alignItems: 'center'}}>
             <Text className='pl-10 pb-4 -pt-20

@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w5h7bkqkuuh06^i)gktl0hbq2lpx0%q3yb#9*(ft#fehtq0t5p'
+SECRET_KEY = 'INSERT_DJANGO_SECRET_KEY'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.1.109']
+ALLOWED_HOSTS = ['localhost', 'INSERT_YOUR_IP_ADDRESS_HERE']
 
 
 # Application definition
@@ -128,9 +128,9 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Your frontend URL
-    "http://192.168.1.109:19000",  # Your local IP with port used by Expo
-    "http://192.168.1.109:8000",  # Your local IP with Django port
+    "http://localhost:3000",                # Your frontend URL
+    "INSERT_YOUR_IP_ADDRESS_HERE:19000",    # Your local IP with port used by Expo
+    "INSERT_YOUR_IP_ADDRESS_HERE8000",      # Your local IP with Django port
 ]
 
 MEDIA_URL = '/media/'

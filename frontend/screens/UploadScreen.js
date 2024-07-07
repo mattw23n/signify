@@ -37,7 +37,7 @@ const UploadScreen = ({ navigation }) => {
       });
   
       try {
-        const response = await axios.post('http://192.168.1.109:8000/api/upload/', formData, {
+        const response = await axios.post('INSERT_YOUR_IP_ADDRESS_HERE/api/upload/', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
